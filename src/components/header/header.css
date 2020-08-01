@@ -1,0 +1,24 @@
+.top-panel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 15px;
+}
+
+.logo {
+    width: 200px;
+    height: 55px;
+}
+
+.topics-container {
+    display: flex;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.topic-button {
+    padding: 5px;
+    flex-grow: 1;
+    text-align: center;
+    background-color: #008966;
+}
