@@ -1,0 +1,22 @@
+$body-bg: #222;
+$body-color: #fff;
+$list-group-bg: #303030;
+$list-group-color: #fff;
+$list-group-border-color: #555;
+$card-bg: #303030;
+
+@import "~bootstrap";
+
+.btn, .btn:focus {
+  box-shadow: none;
+}
+
+.btn:active {
+  border: 1px solid #666;
+}
+
+.btn-next {
+  margin: 20px 0;
+  background-color: #303030;
+  border: 1px solid #555;
+}
