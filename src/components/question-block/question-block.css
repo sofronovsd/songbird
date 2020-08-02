@@ -1,0 +1,24 @@
+.question-container {
+    display: flex;
+    padding: 1rem;
+    background-color: #303030;
+}
+
+.question-image {
+    width: 200px;
+    height: 155px;
+    border-radius: 10px;
+}
+
+.question-info {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 100%;
+}
+
+.question-info__sound {
+    margin-top: 20px;
+    padding: 20px 0;
+    border-top: 1px solid #555;
+}
