@@ -4,6 +4,7 @@
 
 .top-panel {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     margin: 15px;
@@ -16,6 +17,7 @@
 
 .topics-container {
     display: flex;
+    flex-wrap: wrap;
     border-radius: 10px;
     overflow: hidden;
 }

@@ -10,10 +10,10 @@ function App() {
             <Header/>
             <QuestionBlock/>
             <div className="row">
-                <div className="col-6">
+                <div className="col-sm-6">
                     <OptionsBlock/>
                 </div>
-                <div className="col-6">
+                <div className="col-sm-6">
                     <AnswerCard/>
                 </div>
             </div>
