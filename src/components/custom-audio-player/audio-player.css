@@ -1,0 +1,7 @@
+.audio-player {
+    display: flex;
+}
+
+.audio-player__info {
+    flex-grow: 1;
+}

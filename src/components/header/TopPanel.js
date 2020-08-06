@@ -1,6 +1,6 @@
 import React from "react";
 
-function TopPanel() {
+function TopPanel({score}) {
     return (
             <div className="top-panel">
                 <img
@@ -8,7 +8,7 @@ function TopPanel() {
                     src="./assets/songbird-logo.svg"
                     alt="SongBird logo"
                 />
-                <h5>Score: 0</h5>
+                <h5>Score: {score}</h5>
             </div>
     )
 }

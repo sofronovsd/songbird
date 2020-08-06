@@ -4,10 +4,10 @@ import TopicsBar from "./TopicsBar";
 
 import './header.css'
 
-function Header() {
+function Header({score}) {
     return (
         <div className="header">
-            <TopPanel />
+            <TopPanel score={score}/>
             <TopicsBar />
         </div>
     )

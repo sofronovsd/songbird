@@ -1,15 +1,18 @@
 import React from "react";
 
 import './question-block.css'
+import CustomAudioPlayer from "../custom-audio-player/CustomAudioPlayer";
 
-function QuestionBlock() {
+function QuestionBlock({question, isCorrect}) {
     return (
         <div className="jumbotron question-container">
-            <img className="question-image" src="https://live.staticflickr.com//65535//49298804222_474cfe8682.jpg" alt="Bird"/>
+            <img className="question-image" src={isCorrect ? question.image : `./assets/blank.jpg`} alt="Bird"/>
             <div className="question-info">
-                <h5>Ворон</h5>
+                <h5>{isCorrect ? question.name : `******`}</h5>
                 <div className="question-info__sound">
-                    <h5>Bird sound</h5>
+                    {question && <CustomAudioPlayer
+                        streamUrl={question.audio}
+                    />}
                 </div>
             </div>
         </div>

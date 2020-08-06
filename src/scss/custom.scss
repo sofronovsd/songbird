@@ -4,8 +4,26 @@ $list-group-bg: #303030;
 $list-group-color: #fff;
 $list-group-border-color: #555;
 $card-bg: #303030;
+$primary-color: #008966;
 
 @import "~bootstrap";
+@import "~react-soundplayer/styles/buttons.css";
+@import "~react-soundplayer/styles/icons.css";
+@import "~react-soundplayer/styles/progress.css";
+@import "~react-soundplayer/styles/volume.css";
+@import "~react-soundplayer/styles/cover.css";
+
+.sb-soundplayer-btn:focus {
+  outline: none;
+}
+
+.sb-soundplayer-btn {
+  color: $primary-color;
+}
+
+.sb-soundplayer-progress-inner {
+  background-color: $primary-color;
+}
 
 .btn, .btn:focus {
   box-shadow: none;
