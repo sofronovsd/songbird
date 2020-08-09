@@ -28,3 +28,7 @@
     text-align: center;
     background-color: #008966;
 }
+
+.topic-button_active {
+    background-color: #00bc8c;
+}

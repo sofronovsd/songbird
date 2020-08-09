@@ -13,6 +13,10 @@ $primary-color: #008966;
 @import "~react-soundplayer/styles/volume.css";
 @import "~react-soundplayer/styles/cover.css";
 
+.card {
+  height: 100%;
+}
+
 .sb-soundplayer-btn:focus {
   outline: none;
 }

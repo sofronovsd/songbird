@@ -6,7 +6,35 @@ import AnswerCard from "./components/answer-card/AnswerCard";
 import birdsData from "./data/birds";
 
 function App() {
+    const defaultTopics = [
+        {
+            header: 'Разминка',
+            isActive: true
+        },
+        {
+            header: 'Воробьиные',
+            isActive: false
+        },
+        {
+            header: 'Лесные птицы',
+            isActive: false
+        },
+        {
+            header: 'Певчие птицы',
+            isActive: false
+        },
+        {
+            header: 'Хищные птицы',
+            isActive: false
+        },
+        {
+            header: 'Морские птицы',
+            isActive: false
+        }
+    ];
+
     const [currentBird, setCurrentBird] = useState(null)
+    const [topics, setTopics] = useState(defaultTopics)
     const [question, setQuestion] = useState(null)
     const [page, setPage] = useState(0)
     const [options, setOptions] = useState(birdsData[0])
@@ -18,10 +46,16 @@ function App() {
         const nextPage = page + 1;
         setPage(nextPage)
         setOptions(birdsData[nextPage])
-    }, [page])
+
+        const newTopics = topics.concat();
+        const idx = newTopics.findIndex(topic => topic.isActive);
+        newTopics[idx].isActive = false;
+        newTopics[idx+1].isActive = true;
+        setTopics(newTopics)
+    }, [page, topics])
 
     useEffect(() => {
-        const index = Math.floor(Math.random()*options.length);
+        const index = Math.floor(Math.random() * options.length);
         console.log(index)
         console.log(options[index])
         setQuestion(options[index])
@@ -34,7 +68,10 @@ function App() {
 
     return (
         <div className="container">
-            <Header score={score}/>
+            <Header
+                score={score}
+                topics={topics}
+            />
             <QuestionBlock
                 question={question}
                 isCorrect={isCorrect}
@@ -53,7 +90,8 @@ function App() {
             <button
                 className={`btn btn-next btn-block ${isCorrect ? '' : 'disabled'}`}
                 onClick={nextTopic}
-            >Next</button>
+            >Next
+            </button>
         </div>
     );
 }

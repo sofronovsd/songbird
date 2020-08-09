@@ -17,3 +17,11 @@
 .answer-info {
     flex-grow: 1;
 }
+
+.answer-instructions {
+    padding: 1rem;
+}
+
+.answer-instructions span{
+    display: block;
+}
