@@ -1,15 +1,39 @@
-import React from "react";
+import React, {useCallback, useEffect, useState} from "react";
+import {isCorrect} from "../../utils";
 
-function OptionsBlock({data, setBird}) {
+import './options.css'
+
+function OptionsBlock({data, setBird, question}) {
+
+    const [options, setOptions] = useState(data);
+
+    const handleClick = useCallback((bird) => {
+        setBird(bird);
+        const correct = isCorrect(question, bird);
+        setOptions(prevState => {
+            const elemIdx = prevState.findIndex(el => el.id === bird.id);
+            prevState[elemIdx].isCorrect = correct;
+            return prevState;
+        })
+    }, [question, setBird])
+
+    useEffect(() => {
+        setOptions(data)
+    }, [data])
+
     return (
         <ul className="list-group">
             {
-                data.map(bird =>
+                options.map(bird =>
                     <li
                         key={bird.id}
                         className="list-group-item list-group-item-action"
-                        onClick={() => setBird(bird)}
-                    >{bird.name}</li>
+                        onClick={() => handleClick(bird)}
+                    >
+                        <span
+                            className={`circle ${bird.isCorrect !== undefined ? bird.isCorrect ? 'circle_green' : 'circle_red' : ''}`}/>
+                        <span>{bird.name}</span>
+                    </li>
                 )
             }
         </ul>

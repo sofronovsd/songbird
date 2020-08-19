@@ -114,6 +114,7 @@ function App() {
                             <OptionsBlock
                                 data={options}
                                 setBird={setCurrentBird}
+                                question={question}
                             />
                         </div>
                         <div className="col-sm-6">
