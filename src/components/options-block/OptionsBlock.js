@@ -1,5 +1,5 @@
 import React, {useCallback, useEffect, useState} from "react";
-import {isCorrect} from "../../utils";
+import {checkIsCorrect} from "../../utils";
 
 import './options.css'
 
@@ -9,16 +9,17 @@ function OptionsBlock({data, setBird, question}) {
 
     const handleClick = useCallback((bird) => {
         setBird(bird);
-        const correct = isCorrect(question, bird);
+        const correct = checkIsCorrect(question, bird);
         setOptions(prevState => {
             const elemIdx = prevState.findIndex(el => el.id === bird.id);
-            prevState[elemIdx].isCorrect = correct;
+            prevState[elemIdx] = {...prevState[elemIdx], isCorrect : correct};
             return prevState;
         })
     }, [question, setBird])
 
     useEffect(() => {
-        setOptions(data)
+        const cloned = data.concat();
+        setOptions(cloned)
     }, [data])
 
     return (
