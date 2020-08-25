@@ -6,35 +6,9 @@ import AnswerCard from "./components/answer-card/AnswerCard";
 import birdsData from "./data/birds";
 import FinishCard from "./components/finish-card/FinishCard";
 import {checkIsCorrect} from "./utils";
+import defaultTopics from "./data/topics";
 
 function App() {
-    const defaultTopics = [
-        {
-            header: 'Разминка',
-            isActive: true
-        },
-        {
-            header: 'Воробьиные',
-            isActive: false
-        },
-        {
-            header: 'Лесные птицы',
-            isActive: false
-        },
-        {
-            header: 'Певчие птицы',
-            isActive: false
-        },
-        {
-            header: 'Хищные птицы',
-            isActive: false
-        },
-        {
-            header: 'Морские птицы',
-            isActive: false
-        }
-    ];
-
     const [currentBird, setCurrentBird] = useState(null)
     const [topics, setTopics] = useState(defaultTopics)
     const [question, setQuestion] = useState(null)
