@@ -41,13 +41,19 @@ function App() {
 
     const reset = useCallback(() => {
         setCurrentBird(null);
-        setTopics(defaultTopics);
+
+        const newTopics = topics.concat();
+        const idx = newTopics.findIndex(topic => topic.isActive);
+        newTopics[idx].isActive = false;
+        newTopics[0].isActive = true;
+        setTopics(newTopics);
+
         setPage(0);
         setOptions(birdsData[0]);
         setScore(0);
         setFinish(false);
         setComplete(false);
-    }, [defaultTopics])
+    }, [])
 
     useEffect(() => {
         const index = Math.floor(Math.random() * options.length);
