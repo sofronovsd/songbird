@@ -43,3 +43,7 @@ $jumbotron-bg: #303030;
   background-color: #303030;
   border: 1px solid #555;
 }
+
+input[type='range']::-webkit-slider-thumb {
+  background: $primary-color;
+}

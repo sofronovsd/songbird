@@ -10,9 +10,16 @@ function OptionsBlock({data, setBird, question}) {
     const handleClick = useCallback((bird) => {
         setBird(bird);
         const correct = checkIsCorrect(question, bird);
+        let audio;
+        if (correct) {
+            audio = new Audio('./assets/success.mp3');
+        } else {
+            audio = new Audio('./assets/failure.mp3');
+        }
+        audio.play();
         setOptions(prevState => {
             const elemIdx = prevState.findIndex(el => el.id === bird.id);
-            prevState[elemIdx] = {...prevState[elemIdx], isCorrect : correct};
+            prevState[elemIdx] = {...prevState[elemIdx], isCorrect: correct};
             return prevState;
         })
     }, [question, setBird])

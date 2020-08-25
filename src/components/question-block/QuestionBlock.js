@@ -12,6 +12,7 @@ function QuestionBlock({question, isCorrect}) {
                 <div className="question-info__sound">
                     {question && <CustomAudioPlayer
                         streamUrl={question.audio}
+                        isCorrect={isCorrect}
                     />}
                 </div>
             </div>
