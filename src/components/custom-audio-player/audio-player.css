@@ -1,0 +1,30 @@
+.audio-player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.audio-player__top {
+    display: flex;
+    width: 100%;
+}
+
+.audio-player__bottom {
+    display: flex;
+    width: 100%;
+}
+
+.volume-btn {
+    display: flex;
+    align-items: center;
+    margin-right: 5px;
+}
+
+.audio-player__info {
+    flex-grow: 1;
+}
+
+.volume-green {
+    color: green;
+    background-color: green;
+}

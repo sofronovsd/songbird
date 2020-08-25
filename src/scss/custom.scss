@@ -1,0 +1,49 @@
+$body-bg: #222;
+$body-color: #fff;
+$list-group-bg: #303030;
+$list-group-color: #fff;
+$list-group-border-color: #555;
+$card-bg: #303030;
+$primary-color: #008966;
+$jumbotron-bg: #303030;
+
+@import "~bootstrap";
+@import "~react-soundplayer/styles/buttons.css";
+@import "~react-soundplayer/styles/icons.css";
+@import "~react-soundplayer/styles/progress.css";
+@import "~react-soundplayer/styles/volume.css";
+@import "~react-soundplayer/styles/cover.css";
+
+.card {
+  height: 100%;
+}
+
+.sb-soundplayer-btn:focus {
+  outline: none;
+}
+
+.sb-soundplayer-btn {
+  color: $primary-color;
+}
+
+.sb-soundplayer-progress-inner {
+  background-color: $primary-color;
+}
+
+.btn, .btn:focus {
+  box-shadow: none;
+}
+
+.btn:active {
+  border: 1px solid #666;
+}
+
+.btn-next {
+  margin: 20px 0;
+  background-color: #303030;
+  border: 1px solid #555;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  background: $primary-color;
+}

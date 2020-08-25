@@ -1,0 +1,16 @@
+.circle {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-right: 15px;
+    border-radius: 50%;
+    background-color: #555;
+}
+
+.circle_red {
+    background-color: red;
+}
+
+.circle_green {
+    background-color: #008966;
+}
